@@ -2,23 +2,28 @@
 // un año bisiesto y false si no lo es, siguiendo las reglas del calendario gregoriano.
 
 function leapYear (year) {
-    if(year != number) throw new Error `Introduce un numero`
-    else if (year % 4 === 0) ? true: false;
+    if(year != Number){ throw new Error `Introduce un numero`}
+    else if (year % 4 === 0 && year % 100 ==0 || year % 400 ==0) {
+        return true
+    } else {
+        return false
+    }
 }
 // 2. Crea una función llamada 'clasificarTriangulo' que tome tres argumentos representando las longitudes de los lados
 // de un triángulo y determine si es equilátero, isósceles o escaleno, imprimiendo el resultado por consola.
 
 function clasificarTriangulo (lado1, lado2, lado3) {
-    if(lado2<lado3 && lado1===lado2)return 'Es un triangulo isosceles';
-    else if(lado1===lado2 && lado2===lado3) return 'Es un triángulo equilatero';
-    else return 'Se trata de un triangulo escaleno'
+    if(isNan(lado1) || isNan(lado2) || isNaN(lado3)){ throw new Error 'Uno de los parametros no es un numero'}
+    else if(lado2<lado3 && lado1===lado2){ return 'Es un triangulo isosceles';}
+    else if(lado1===lado2 && lado2===lado3) {return 'Es un triángulo equilatero';}
+    else return 'Se trata de un triangulo escaleno';
 }
 
 // 3. Crea un programa que solicite al usuario dos números, realice la división del primero por el segundo y 
 //muestre el cociente por consola. Asegúrate de manejar todos los casos para evitar errores.
 
 function numeros (num1, num2) {
-    if(num1 != number || num2 != number) throw new Error `Introduce un numero`
+    if(num1 != Number || num2 != Number) throw new Error `Introduce un numero`
 
     const division = num1/num2;
     console.log(disivion)
@@ -38,17 +43,27 @@ function checkUpperCase (word) {
 //     }
 // }
 
+//ESTA ES LA BUENA CON EXPRESIONES REGULARES
+const minimo8Caracteres = contraseña.lenth>= 8;
+const tieneMayusculas = /[A-Z]/.test(contraseña);
+const tienesNumero = /\d/.test(contraseña);
 
-const checkNumb = (elem) => typeof elem === number; // ¿esto sería truthy?
-
-const passArr = password.split();
-const checkUpper = passArr.some(checkUpperCase);
-const checkPassNumb = passArr.some(checkNumb);
-
-function passRequired (password) {
-    if(password.length >= 8 && checkUpper && checkPassNumb) return 'Your pass is valid';
-    else return 'Your pass is not valid. Try usin some number, at least one character on capital and at least 8 characters.'
+if(minimo8Caracteres && tieneMayusculas && tienesNumero){
+    console.log('Contraseña valida');
+}else {
+    console.log('controsaña valida');
 }
+
+// const checkNumb = (elem) => typeof elem === number; // ¿esto sería truthy?
+
+// const passArr = password.split();
+// const checkUpper = passArr.some(checkUpperCase);
+// const checkPassNumb = passArr.some(checkNumb);
+
+// function passRequired (password) {
+//     if(password.length >= 8 && checkUpper && checkPassNumb) return 'Your pass is valid';
+//     else return 'Your pass is not valid. Try usin some number, at least one character on capital and at least 8 characters.'
+// }
 
 
 
@@ -79,12 +94,12 @@ saludUser();
 
 function numPrimos (num) {
 
-    if(year != number) throw new Error `Introduce un numero`
+    if(num != Number) throw new Error `Introduce un numero`
 
     const allNumbers = [];
     
         for(let i=0; i<num; i++){
-            if(i / i === 0 & i/1 === 0){
+            if(i % i === 0 && i%1 === 0){
                 allNumbers.push(num)
             }
         }
