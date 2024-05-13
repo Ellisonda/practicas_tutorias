@@ -25,7 +25,32 @@ function numeros (num1, num2) {
 }
 
 // 4. Crea un programa que solicite al usuario ingresar una contraseña y luego verifique si cumple con los
-// requisitos mínimos: al menos 8 caracteres, al menos una letra mayúscula y al menos un número. Informa al usuario si la contraseña ingresada es válida o no.
+// requisitos mínimos: al menos 8 caracteres, al menos una letra mayúscula y al menos un número.
+// Informa al usuario si la contraseña ingresada es válida o no.
+function checkUpperCase (word) {
+    return word === word.toUpperCase();
+}
+// function checkpassUpper (password) {
+//     let eachWord = password.CharAt(i);
+//     for(let i=0; i<password.length; i++){
+//         if( checkUpperCase(eachWord)){ return true}
+//         else {return false}
+//     }
+// }
+
+
+const checkNumb = (elem) => typeof elem === number; // ¿esto sería truthy?
+
+const passArr = password.split();
+const checkUpper = passArr.some(checkUpperCase);
+const checkPassNumb = passArr.some(checkNumb);
+
+function passRequired (password) {
+    if(password.length >= 8 && checkUpper && checkPassNumb) return 'Your pass is valid';
+    else return 'Your pass is not valid. Try usin some number, at least one character on capital and at least 8 characters.'
+}
+
+
 
 
 
@@ -34,6 +59,49 @@ function numeros (num1, num2) {
 //la altura en metros. Además informa al usuario sobre su estado de salud según el 
 //IMC calculado teniendo en cuenta esta tabla: IMC < 18.5: "Bajo peso" || 18.5 ≤ IMC < 25: "Peso normal" ||25 ≤ IMC < 30: "Sobrepeso" ||IMC ≥ 30: "Obesidad"
 
+//calculo el IMC
+
+
+function saludUser () {
+    const imc = function imc (peso, altura) {
+        return peso/ Math.pow(altura, 2)
+    };
+
+    if(imc <18.5) return 'Estas una mijita delgado';
+    else if(18.5<= imc < 25) return  ' Estas de lujo';
+    else if (25<= img <30) return 'Dejate de papas y muevete un poco';
+    else return 'Vamos para la eliptica gaxon'.
+}
+saludUser();
+
+
 // 6. Desarrolla un programa en JavaScript que liste todos los números primos hasta un número dado por el usuario.
 
+function numPrimos (num) {
+
+    if(year != number) throw new Error `Introduce un numero`
+
+    const allNumbers = [];
+    
+        for(let i=0; i<num; i++){
+            if(i / i === 0 & i/1 === 0){
+                allNumbers.push(num)
+            }
+        }
+    
+}
+numPrimos();
+
+
 // 7. Crea una función que convierta temperaturas entre Celsius y Fahrenheit.
+
+
+
+function conversorToFareng (num) {
+    const celsiusToFaren = num*32;
+    const farenToCelsius = num/32;
+    console.log(` ${num} grados Celsius son ${celsiusToFaren} grados Farenheit`)
+    console.log(` ${num} grados Farenheit son ${farenToCelsius} grados Celsius`)
+
+}
+
